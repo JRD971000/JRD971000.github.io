@@ -15,9 +15,11 @@ permalink: /about/
 </div>
 <div class="col-sm-8 col-xs-12">
   <h3>{{ member.name }}</h3>
-  <h4><i>{{ member.info }}</i></h4>
+  <i style="font-size:20px">{{ member.info }}</i><br>
+  
   {% if member.email %}<a href="mailto:{{ member.email }}" target="_blank"><i class="fa fa-envelope-square fa-3x"></i></a> {% endif %}
   {% if member.cv %} <a href="{{ site.url }}{{ site.baseurl }}/{{ member.cv }}" target="_blank"><i class="ai ai-cv-square ai-3x"></i></a> {% endif %}
+  {% if member.linkedin %} <a href="{{ member.linkedin }}" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a> {% endif %}
   {% if member.scholar %} <a href="{{ member.scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai-3x"></i></a> {% endif %}
   {% if member.github %} <a href="{{ member.github }}" target="_blank"><i class="fa fa-github-square fa-3x"></i></a> {% endif %}
   {% if member.researchgate %} <a href="{{ member.researchgate }}" target="_blank"><i class="ai ai-researchgate-square ai-3x"></i></a> {% endif %}
@@ -62,42 +64,23 @@ permalink: /about/
 </div>
 {% endfor %}
 
-{% if site.data.grants %}
+## Short biography
 <div class="jumbotron">
-### Grants
-<ul>
-{% for grant in site.data.grants %}
- <li> {{ grant.name }} </li>
-{% endfor %}
-</ul>
+<div class="short-bio">
+  
+   I am currently a Ph.D. student at the University of Illinois at Urbana-Champaign (UIUC) under supervision of [Matthew West](http://lagrange.mechse.illinois.edu/). I also work with [Luke Olson](http://lukeo.cs.illinois.edu/) and [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan/). The main focus of my Ph.D. has been optimizing partial differential equations solvers using machine learning. Along with my studies at UIUC, I have also done internships at NVIDIA and John Deere where I worked on machine learnign projects, mainly concerning graph neural networks, computer vision, and reinforcement learning. I am originally from Iran and was born and raised in Tehran.
+
 </div>
-{% endif %}
+</div>
 
 {% if site.data.awards %}
+## Awards
 <div class="jumbotron">
-### Awards
-<ul>
+<div class="rowl1" style="padding-top: 10px;">
+
 {% for award in site.data.awards %}
- <li> {{ award.name | replace: "-","&#8211;"}} </li>
+{{ forloop.index }}. {% if award.name_url %}<a href="{{ award.name_url }}" target="_blank">{% endif %}<strong>{{ award.name }}</strong>{% if award.name_url %}</a>{% endif %} {% if award.organisation %} from {% if award.organisation_url %}<a href="{{ award.organisation_url }}" target="_blank">{% endif %} {{ award.organisation }}{% if award.organisation_url %}</a>{% endif %}{% endif %}{% if award.subtitle %}: {{ award.subtitle }}{% endif %}.
 {% endfor %}
-</ul>
+</div>
 </div>
 {% endif %}
-
-{% if site.data.people %}
-<div class="jumbotron">
-### Students and mentoring
-<ul>
-{% for student in site.data.people %}
- <li> {{ student.name }}, {{student.location}} ({{student.degree}}, {{student.year}}) </li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
-
-<div class="jumbotron">
-  <h4>Sponsors</h4>
-  <div style='display:block; text-align:center; margin-left:auto; margin-right:auto;'>
- {% for funder in site.data.funders %}<a href="{{ funder.url }}" target="_blank"><img src='{{ site.url }}{{ site.baseurl }}/images/{{ funder.image }}' style='max-height: 80px; max-width: 200px; margin: 1%'/></a>{% endfor %}
-  </div>
-</div>

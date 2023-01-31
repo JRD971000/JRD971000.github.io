@@ -5,29 +5,35 @@ sitemap: false
 permalink: /
 ---
 
-### Welcome!
+<div style="height: 25px;"></div>
 
-Theoretical physics is a branch of physics that focuses on the development of mathematical models and theories to understand and explain natural phenomena.
-It plays a crucial role in our understanding of the fundamental laws of the universe and the fundamental particles that make up all matter.
-Research in theoretical physics helps us to make predictions about how the universe works and to test these predictions through experiments.
-It also helps us to understand the fundamental principles that govern the behavior of matter and energy, and to explore the limits of our current knowledge.
-Theoretical physics helps us to make progress in a wide range of fields, including cosmology, particle physics, and quantum mechanics, and it has led to many important discoveries and technological innovations.
+Hi, and welcome to my homepage! I am a Ph.D. student at the University of Illinois Urbana-Champaign. I am advised by [Matthew West](http://lagrange.mechse.illinois.edu/), and broadly speaking, I work on optimizing PDE solvers using machine learning. In particular, I have used techniques such as unsupervised and reinforcement learning (RL), along with graph neural networks (GNN), to optimize numerical PDE solvers.
+
+<div style="height: 5px;"></div>
+
+In a study published at [NeurIPS 2021](https://neurips.cc/virtual/2021/poster/25928), I utilized RL and GNN to optimize coarse grid selecetion in algebraic multigrid (AMG, a famous numerical PDE solver), with theoritical guarantees for convergence of the obtained method. Feel free to check out the paper [here](https://openreview.net/pdf?id=xXYjxli-2i). 
+
+In another study published at [NeurIPS 2022](https://neurips.cc/virtual/2022/poster/53135), I utilized unsupervised learning and GNN to learn and optimize domain decomposition PDE solvers (DDMs). The unsupervised loss funciton introduced in this study provides theoritical guarantee to converge to the global optimum in limits. Feel free to check out the paper [here](https://openreview.net/pdf?id=FvdOlVWL-w).
+
 
 <div class="container">
 <div class="row">
 <center>
-<img src="{{ site.url }}{{ site.baseurl }}/images/banner.jpg" width="100%"/><br/>
-Examples of Feynman diagrams. <br/>
-Feynman R., The theory of positrons. <i>Phys. Rev.</i> (1949)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mggnn.jpg" width="100%"/><br/>
+Hierarchy of grids obtained from a PDE passing through GNNs. <br/>
 </center>
+
+<div style="height: 15px;"></div>
+
+I have recently been working on a follow up study on learning domain decomposition solvers, and have developed a new GNN architecture to learn to optimize multilevel DDMs. I have also improved the unsupervised loss function to adapt to multilevel training scheme, wich also enjoys theoritical guarantee to converge to the global optimum in limits. Feel free to check out the preprint [here]().
+
 </div>
 </div>
 <br/>
 
-### About me
+<!-- <div class="row" style="text-align:center">
+  <iframe style="display:inline-block; border-radius: 5px; border:0px solid #FFF; width: 95%; height: 246px" src="https://www.youtube.com/embed/W2VWLYnTYrM?playlist=W2VWLYnTYrM&loop=1&autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
 
-I am a physicist working in the field of quantum mechanics and quantum electrodynamics.
-I received my undergraduate degree in physics from the Massachusetts Institute of Technology (MIT) in 1939 and went on to earn my PhD from Princeton University in 1942.
-After completing my doctoral studies, I worked on the Manhattan Project, where I helped develop the first atomic bombs.
-After the war, I returned to academia, holding teaching and research positions at Cornell and now the California Institute of Technology.
-
+  Demo of [coupled simulator](https://github.com/bazilinskyy/coupled-sim) with 3 agents in the same traffic scene.
+</div>
+ -->
