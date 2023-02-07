@@ -31,6 +31,7 @@ task :publish => [:generate] do
     system "git commit -m #{message.inspect}"
     system "git branch master"
     system "git checkout master"
+    system "git branch"
     system "git remote add orgin https://github.com/JRD971000/JRD971000.github.io"
     system "git push orgin master --force"
 
